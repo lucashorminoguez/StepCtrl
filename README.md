@@ -1,7 +1,7 @@
 # StepCtrl (prueba)
 Sistema de manejo y control de motores paso a paso.
 ## Microcontrolador
-el pretendido es un stm32 blue pill, no tengo experiencia usandolo. Lo escuche en clase y me parecio una buena idea implementarlo por las prestaciones de los timers y que son usados para tareas similares.
+el pretendido es un STM32 STM32F103C8T6, no tengo experiencia usandolo. Lo escuche en clase y me parecio una buena idea implementarlo por las prestaciones de los timers y que son usados para tareas similares.
 ## Motor y driver 
 Cualquiera, este modulo carece de fuente y manejo de corriente para los motores, solo envia la secuencia de steps segun seteos y entradas aisladas.
 ## Cargar Valores
