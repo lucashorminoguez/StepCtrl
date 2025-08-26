@@ -15,7 +15,7 @@ Los campos a modificar son:
 - TimeOut
 - Salida
 ### Seteo de campos :
-De momento se van a ingresar modificando un archivo de texto antes de la compilación. Esto es para tener una buena base sin complicar el desarrollo, lo intención es en un futuro poner display y armar la ui.
+De momento se van a ingresar modificando un archivo de texto antes de la compilación. Esto es para tener una buena base sin complicar el desarrollo, la intención es en un futuro poner display y armar la ui.
 ## Funcionamiento :
 ### Modo One-Shot:  El modo simple para disparo del motor. Solo se tiene en cuenta el Trigger y se puede configurar si dar fin al movimiento por tiempo o trigger/señal externa.
 ### Modo Continuo : Este modo es mas completo, se pueden configurar de 2 a 3 pasos o instancias con parámetros independientes sincronizadas por trigger,timer, señal externa o cantidad de pulsos individual.
