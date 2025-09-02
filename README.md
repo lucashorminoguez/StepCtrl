@@ -11,7 +11,7 @@ El codigo provee manejo de:
 ## Modos de Funcionamiento:
 - ### Modo One-Shot:  
 El modo simple para disparo del motor. Solo se tiene en cuenta una señal de disparo única y se puede configurar si dar fin al movimiento por tiempo o Trigger/señal externa.
-- ### Modo Continuo : 
+- ### Modo Secuencia : 
 Este modo es mas completo, se pueden configurar hasta 3 pasos o secuencias de movimiento con parámetros independientes sincronizadas por Trigger/señal externa o Timeout.
 Al finalizar un ciclo completo se puede leer un valor de habilitación para el ciclo siguiente o continuar sin validar.
 Cada ciclo se registra aumentando un contador que sirve para activar una salida definida en placa.
@@ -51,8 +51,8 @@ Son las señales de disparo de los distintos eventos, el modulo esta pensado par
 - CTRL_STATE_TRIGGER_FINAL      :Activo bajo/alto
 - CTRL_STATE_HABILITACION_CICLO :Activo bajo/alto
 ### Modo:
-- CTRL_MODO            1       : Modo continuo o Modo ONE-SHOT
-- CTRL_CANT_PASOS      3       : Hasta 3 Pasos/Movimientos independientes en modo continuo
+- CTRL_MODO            1       : Modo Secuencia o Modo ONE-SHOT
+- CTRL_CANT_PASOS      3       : Hasta 3 Pasos/Movimientos independientes en Modo Secuencia
 ### Timeouts:
 - CTRL_TIMEOUT_0       60      : Timeout [Segundos] para el Trigger del oneshot
 - CTRL_TIMEOUT_1       10      : Timeout [Segundos] para el Trigger del paso 1

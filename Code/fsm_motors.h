@@ -23,14 +23,14 @@ Estructura de datos cargados por el usuario en archivo CTRL que determina el fun
 */
 typedef struct {    
     int vel_0;      // velocidad del modo oneshot, [rpm] pasado a frecuencia de pulsos 
-    int vel_1;      // velocidad del PASO1 en modo continuo, [rpm] pasado a frecuencia de pulsos 
-    int vel_2;      // velocidad del PASO2 en modo continuo, [rpm] pasado a frecuencia de pulsos 
-    int vel_3;      // velocidad del PASO3 en modo continuo, [rpm] pasado a frecuencia de pulsos 
+    int vel_1;      // velocidad del PASO1 en modo Secuencia, [rpm] pasado a frecuencia de pulsos 
+    int vel_2;      // velocidad del PASO2 en modo Secuencia, [rpm] pasado a frecuencia de pulsos 
+    int vel_3;      // velocidad del PASO3 en modo Secuencia, [rpm] pasado a frecuencia de pulsos 
 
     int direc_0;    // DIRECCION DEL ONESHOT 0=HORARIO, 1=ANTIHORARIO
-    int direc_1;    // DIRECCION PASO1 CONTINUO 0=HORARIO, 1=ANTIHORARIO
-    int direc_2;    // DIRECCION PASO2 CONTINUO 0=HORARIO, 1=ANTIHORARIO
-    int direc_3;    // DIRECCION PASO3 CONTINUO 0=HORARIO, 1=ANTIHORARIO
+    int direc_1;    // DIRECCION PASO1 Secuencia 0=HORARIO, 1=ANTIHORARIO
+    int direc_2;    // DIRECCION PASO2 Secuencia 0=HORARIO, 1=ANTIHORARIO
+    int direc_3;    // DIRECCION PASO3 Secuencia 0=HORARIO, 1=ANTIHORARIO
 
     int salida; // próxima implementación
 
@@ -48,17 +48,17 @@ typedef struct {
     int state_trigger_final;        // 0=ACTIVO BAJO 1=ACTIVO ALTO
     int state_habilitacion_ciclo;   // 0=ACTIVO BAJO 1=ACTIVO ALTO
 
-    int modo; // 0=ONESHOT, 1=CONTINUO
-    int cant_pasos; //  <1 INACTIVO, cantidad de pasos en modo continuo
+    int modo; // 0=ONESHOT, 1=Secuencia
+    int cant_pasos; //  <1 INACTIVO, cantidad de pasos en modo Secuencia
 
     int timeout_0; // timeout del modo oneshot[segundos]
-    int timeout_1; // timeout del paso1 en modo continuo[segundos]
-    int timeout_2; // timeout del paso2 en modo continuo[segundos]
-    int time_out_final; // timeout del paso3 en modo continuo[segundos]
+    int timeout_1; // timeout del paso1 en modo Secuencia[segundos]
+    int timeout_2; // timeout del paso2 en modo Secuencia[segundos]
+    int time_out_final; // timeout del paso3 en modo Secuencia[segundos]
 
 } motor_ctrl_t;
 
-/*Decide entre Modo Continuo y Modo One-shot
+/*Decide entre Modo Secuencia y Modo One-shot
 de momento no va a cargar valores nuevos pero me sirve que exista. */
 state_t f_cargando_param(motor_ctrl_t ctrl);
 //Espera Trigger segun el seteo de ctrl para pasar a GIRANDO ONESHOT
