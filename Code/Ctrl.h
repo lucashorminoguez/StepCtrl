@@ -1,11 +1,16 @@
 #ifndef CTRL_H
 #define CTRL_H
 
-// CONFIGURACIÓN POR DEFECTO
+// CONFIGURACIÓN DEL MOTOR :
+#define PASOS_POR_VUELTA    200
+#define MICROSTEPPING       16
 
-#define CTRL_VEL_0          1000    // rpm para el Trigger del oneshot
-#define CTRL_VEL_1          500     // rpm para el Trigger del paso 1  
-#define CTRL_VEL_2          750     // rpm para el Trigger del paso 2
+
+// CONFIGURACIÓN FUNCIONAMIENTO POR DEFECTO
+
+#define CTRL_VEL_0          500    // rpm para el Trigger del oneshot
+#define CTRL_VEL_1          200     // rpm para el Trigger del paso 1  
+#define CTRL_VEL_2          150     // rpm para el Trigger del paso 2
 #define CTRL_VEL_3          300     // rpm para el Trigger del paso 3
 
 #define CTRL_DIREC_0        0       //Sentido de giro para el Trigger del oneshot
