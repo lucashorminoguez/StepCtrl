@@ -1,4 +1,4 @@
-#include "hardware.h"
+#include "hal_ctrl.h"
 
 int m_arranca(int vel){
     return 0;
@@ -13,7 +13,10 @@ int m_termina(int vel){
     return 0;
 };   
 
-int h_getSignalPin(int index){
+int h_getaAnalogPin(int index){
+    return 0;
+};
+int h_getDigitalPin(int index){
     return 0;
 };
 

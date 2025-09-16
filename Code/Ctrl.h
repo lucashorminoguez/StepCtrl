@@ -37,4 +37,6 @@
 #define CTRL_TIMEOUT_2       10       // segundos para el Trigger del paso 2
 #define CTRL_TIMEOUT_FINAL   10      // segundos para el Trigger del final
 
+
+
 #endif
