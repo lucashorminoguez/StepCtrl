@@ -1,16 +1,16 @@
-# StepCtrl
+# StepCtrl 
 Sistema de manejo y control de motores paso a paso.
 ## Descripción:
 Este sistema permite el manejo secuencial de motores paso a paso o steppers cambiando valores según el proposito de la operación. 
 El codigo provee manejo de: 
-- Velocidad (rampa de aceleracion ajustada para el arranque, frenado y alteraciones).
+- ⚡ Velocidad (rampa de aceleracion ajustada para el arranque, frenado y alteraciones).
   Sincronizada o en tiempo real mediante entrada analogica.
-- Dirección/sentido de giro.
-- Señales de disparo y timeouts por cada movimiento.
-- Secuencias de hasta 3 pasos u operaciones.
-- 2 Modos de funcionamiento, para tareas simples o complejas.
+- 🔄 Dirección/sentido de giro.
+- 🔫⏱️ Señales de disparo y timeouts por cada movimiento.
+- 1️⃣2️⃣3️⃣ Secuencias de hasta 3 pasos u operaciones.
+- ⚙️2 Modos de funcionamiento, para tareas simples o complejas.
 ---
-## Modos de Funcionamiento:
+## Funcionamiento:
 - ### Modo One-Shot:  
 El modo simple para disparo del motor. Solo se tiene en cuenta una señal de disparo única y se puede configurar si dar fin al movimiento por tiempo o Trigger/señal externa.
 - ### Modo Secuencia : 
@@ -21,6 +21,12 @@ Todas las funciones pueden desahabilitarse poniendo valores en 0 segun se requie
 
 *Aclaracion : La instancia intermedia, puede ser usada para un tiempo muerto donde se requiera no accionar el motor (velocidad=0).* 
 
+---
+
+## Diagrama de estados :
+![Image_Alt](https://github.com/lucashorminoguez/StepCtrl/blob/main/StepCtrl.diagramaDeEstados.png?raw=true)
+
+*Se dispone de una entrada analogica para variar la velociadad en tiempo real dentro de cualquier estado, exceptuando `CARGANDO_PARAM`, `ESPERANDO_PASO1` y `FINALIZANDO_CICLO` a efectos de no activar el motor en falso*
 ---
 ## HARDWARE:
 ### Microcontrolador:
@@ -35,9 +41,9 @@ Dentro del archivo nos encontramos von varios `#define` a completar segun el mot
 
 ### Motor y driver
 
-- `PASOS_POR_VUELTA` : Cantidad de pasos que da el motor en una vuelta completa. 
+- `PASOS_POR_VUELTA` : Cantidad de pasos que el motor da por vuelta completa. Nos lo da el fabricante. 
 
-- `MICROSTEPPING`    : Configuración del driver para microstepping.  
+- `MICROSTEPPING`    : Configuración del driver para microstepping. Hace referencia a la cantidad de pulsos necesarios para generar un paso del motor, normalmente se configura con jumpers u algun otro sistema en la placa.  
   Ej: 1 = full step, 2 = half step, 16, 32, etc.
 
 > Internamente, la frecuencia de pulsos se calcula como:  
@@ -84,7 +90,5 @@ Son las señales de disparo de los distintos eventos, el modulo esta pensado par
 - `CTRL_TIMEOUT_1`       10      : Timeout [Segundos] para el Trigger del paso 1
 - `CTRL_TIMEOUT_2`       10      : Timeout [Segundos] para el Trigger del paso 2
 - `CTRL_TIMEOUT_FINAL`   10      : Timeout [Segundos] para el Trigger del final
-
-## Diagrama de estados :
-![Image_Alt](https://github.com/lucashorminoguez/StepCtrl/blob/main/StepCtrl.diagramaDeEstados.png?raw=true)
+---
 ##### *sujeto a cualquier cambio*
