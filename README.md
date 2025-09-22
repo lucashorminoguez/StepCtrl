@@ -44,6 +44,7 @@ De momento solo nos interesan los pines :
 
 En caso de implementar otras funcionalidades esta es la configuración de pines que se mantendra.
 En la carpeta "PCB_StepControl" se encuentra el avance con el circuito completo, pero por el momento se desestima, esta en fase de proceso. Probablemente reemplace el pc817 por algun opto de 4 canales y estoy en la disyuntiva entre usar un lm2596 para regular la entrada y alimentar al micro con 3.3v o entregar 5v y pasar por un regulador lineal como el ld1117 a los 3.3v para una señal mas limpia.
+
 ---
 
 ## Cargar Valores usando el archivo CTRL.h :
