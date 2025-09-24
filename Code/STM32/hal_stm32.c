@@ -15,6 +15,7 @@ static void MX_GPIO_Init(void);
 static void MX_TIM2_Init(void);
 static void MX_TIM3_Init(void);
 
+//ACA YA ME DEBERIAN LLEGAR LOS VALORES EN FRECUENCIA PARA QUE SEA MAS FACIL CREO, EL PROBLEMA DE LA h_rpm_to_freq es que necesita de ctrl.h 
 
 uint16_t m_arranca(uint16_t vel){
     return 0;
@@ -45,7 +46,10 @@ int h_micro_init(void)
   MX_TIM3_Init();
 }
 
-
+uint16_t configtimer(){
+  return 0; 
+}
+//------------------------- FUNCIONES PROPIAS DEL STM32 --------------------------
 void SystemClock_Config(void)
 {
   RCC_OscInitTypeDef RCC_OscInitStruct = {0};

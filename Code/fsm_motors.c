@@ -134,3 +134,8 @@ motor_ctrl_t f_get_ctrl_default(){
     
     return ctrl_default;
 }
+
+uint16_t h_rpm_to_freq(uint16_t rpm ){
+    uint16_t freq = (rpm/60)*(PASOS_POR_VUELTA * MICROSTEPPING);
+    return freq;
+}

@@ -114,6 +114,9 @@ motor_ctrl_t f_get_ctrl_default();
 //CARGA VALORES EN CONFIG, POR EL MOMENTO NO TIENE APLICACIÓN
 uint16_t f_set_ctrl(motor_ctrl_t new_ctrl); 
 
+// TRANSFORMA EL VALOR EN RPM RECIBIDO POR EL USUARIO EN FRECUENCIA
+uint16_t h_rpm_to_freq(uint16_t rpm );
+
 #endif
 
 
