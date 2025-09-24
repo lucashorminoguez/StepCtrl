@@ -8,10 +8,10 @@
 
 // CONFIGURACIÓN FUNCIONAMIENTO POR DEFECTO
 
-#define CTRL_VEL_0          500    // rpm para el Trigger del oneshot
-#define CTRL_VEL_1          200     // rpm para el Trigger del paso 1  
-#define CTRL_VEL_2          150     // rpm para el Trigger del paso 2
-#define CTRL_VEL_3          300     // rpm para el Trigger del paso 3
+#define CTRL_VEL_0          500    // rpm para el Oneshot
+#define CTRL_VEL_1          200     // rpm para el Paso 1  
+#define CTRL_VEL_2          150     // rpm para el Paso 2
+#define CTRL_VEL_3          300     // rpm para el Paso 3
 
 #define CTRL_DIREC_0        0       //Sentido de giro para el Trigger del oneshot
 #define CTRL_DIREC_1        0       //Sentido de giro para el Trigger del paso 1

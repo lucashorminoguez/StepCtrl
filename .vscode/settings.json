@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "perifericos.h": "c",
+        "main.h": "c",
+        "stm32f1xx_hal_rcc.h": "c"
+    }
+}

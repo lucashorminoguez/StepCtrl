@@ -1,104 +1,105 @@
 #include "fsm_motors.h"
 #include "Ctrl.h"
-#include "hal_ctrl.h"
+#include "hal_micro.h"
 
-state_t f_cargando_param(motor_ctrl_t ctrl,long *actual_time){
+
+state_t f_cargando_param(motor_ctrl_t ctrl,uint32_t *actual_time){
     if (ctrl.modo==1){
         return ESPERANDO_PASO1;
     }else if (ctrl.modo==0){
         return ESPERANDO_ONESHOT;
     };
     return CARGANDO_PARAM;
-};
+}
 
-state_t f_esperando_oneshot(motor_ctrl_t ctrl,long *actual_time){
+state_t f_esperando_oneshot(motor_ctrl_t ctrl,uint32_t *actual_time){
     if(ctrl.state_trigger_oneshot == h_getDigital(ctrl.trigger_oneshot)){ 
         return GIRANDO_ONESHOT;
     };
     return ESPERANDO_ONESHOT;
-};
+}
 
-state_t f_girando_oneshot(motor_ctrl_t ctrl, long *actual_time){
+state_t f_girando_oneshot(motor_ctrl_t ctrl, uint32_t *actual_time){
     if (*actual_time == TIMEOUT_LIBERADO){
         *actual_time = h_getMilis();
     };
-    if(ctrl.state_trigger_oneshot == h_getDigital(ctrl.trigger_oneshot) || (h_getMilis() - *actual_time >= ctrl.timeout_0)){
+    if(ctrl.state_trigger_oneshot == h_getDigital(ctrl.trigger_oneshot) || ((h_getMilis() - *actual_time)/1000 >= ctrl.timeout_0)){
         m_termina(ctrl.vel_0);
         *actual_time = TIMEOUT_LIBERADO;
         return CARGANDO_PARAM;
     };
     return GIRANDO_ONESHOT; 
-};
+}
 
-state_t f_esperando_paso1(motor_ctrl_t ctrl,long *actual_time){
+state_t f_esperando_paso1(motor_ctrl_t ctrl,uint32_t *actual_time){
     if(ctrl.state_trigger1 == h_getDigital(ctrl.trigger_paso1)){
         return GIRANDO1;
     };
     return ESPERANDO_PASO1;
-};
+}
 
-state_t f_girando1(motor_ctrl_t ctrl,long *actual_time){
+state_t f_girando1(motor_ctrl_t ctrl,uint32_t *actual_time){
     m_arranca(ctrl.vel_1);
     if(ctrl.cant_pasos<=1){
         return ESPERANDO_FINAL;
-    };
+    }
     return ESPERANDO_PASO2;
-};
+}
 
-state_t f_esperando_paso2(motor_ctrl_t ctrl,long *actual_time){
+state_t f_esperando_paso2(motor_ctrl_t ctrl,uint32_t *actual_time){
     if (*actual_time == TIMEOUT_LIBERADO){
         *actual_time = h_getMilis();
-    };
-    if(ctrl.state_trigger2 == h_getDigital(ctrl.trigger_paso2)|| h_getMilis() - *actual_time >= ctrl.timeout_1){
+    }
+    if(ctrl.state_trigger2 == h_getDigital(ctrl.trigger_paso2)|| (h_getMilis() - *actual_time)/1000 >= ctrl.timeout_1){
         *actual_time = TIMEOUT_LIBERADO;
         return GIRANDO2;
-    };
+    }
 
     return ESPERANDO_PASO2;
-};
+}
 
-state_t f_girando2(motor_ctrl_t ctrl,long *actual_time){
+state_t f_girando2(motor_ctrl_t ctrl,uint32_t *actual_time){
     m_cambia_vel(ctrl.vel_2);
     if(ctrl.cant_pasos<=2){
         return ESPERANDO_FINAL;
-    };
+    }
     return ESPERANDO_PASO3;
-};
+}
 
-state_t f_esperando_paso3(motor_ctrl_t ctrl,long *actual_time){
+state_t f_esperando_paso3(motor_ctrl_t ctrl,uint32_t *actual_time){
     if (*actual_time == TIMEOUT_LIBERADO){
         *actual_time = h_getMilis();
-    };
-    if(ctrl.state_trigger3 == h_getDigital(ctrl.trigger_paso3)||h_getMilis() - *actual_time >= ctrl.timeout_1){
+    }
+    if(ctrl.state_trigger3 == h_getDigital(ctrl.trigger_paso3)||(h_getMilis() - *actual_time)/1000 >= ctrl.timeout_1){
         *actual_time = TIMEOUT_LIBERADO;
         return GIRANDO3;
-    };
+    }
     return ESPERANDO_PASO3;    
-};
+}
 
-state_t f_girando3(motor_ctrl_t ctrl,long *actual_time){
+state_t f_girando3(motor_ctrl_t ctrl,uint32_t *actual_time){
     m_cambia_vel(ctrl.vel_3);
     return ESPERANDO_FINAL;
-};
+}
 
-state_t f_esperando_final(motor_ctrl_t ctrl,long *actual_time){
+state_t f_esperando_final(motor_ctrl_t ctrl,uint32_t *actual_time){
     if (*actual_time == TIMEOUT_LIBERADO){
         *actual_time = h_getMilis();
-    };
-    if(ctrl.state_trigger_final == h_getDigital(ctrl.trigger_final) ||h_getMilis() - *actual_time >= ctrl.timeout_1) {
+    }
+    if(ctrl.state_trigger_final == h_getDigital(ctrl.trigger_final) ||(h_getMilis() - *actual_time)/1000 >= ctrl.timeout_1) {
         *actual_time = TIMEOUT_LIBERADO;
-        return FINALIZANDO;
-    };
+        return FINALIZANDO_CICLO;
+    }
     return ESPERANDO_FINAL;
-};
+}
 
-state_t f_finalizando(motor_ctrl_t ctrl,long *actual_time){
+state_t f_finalizando(motor_ctrl_t ctrl,uint32_t *actual_time){
     m_termina(0);
     if(!ctrl.habilitacion_ciclo || ctrl.state_habilitacion_ciclo == h_getDigital(ctrl.habilitacion_ciclo)){ // eligio deshabilitar la señal o la señal elegida esta activa
         return CARGANDO_PARAM;
-    };
-    return FINALIZANDO;
-};
+    }
+    return FINALIZANDO_CICLO;
+}
 
 motor_ctrl_t f_get_ctrl_default(){
     motor_ctrl_t ctrl_default = {
@@ -132,21 +133,4 @@ motor_ctrl_t f_get_ctrl_default(){
     };
     
     return ctrl_default;
-};
-
-int diferencia(int a, int b){
-    int dif = (a > b) ? (a - b) : (b - a);
-    return dif;
-};
-
-int f_leer_pote(){
-    return h_getAnalog(POTENCIOMETRO);
-};
-
-int f_pote_cambia_vel(int old_pote){
-    int new_pote = (diferencia(old_pote,f_leer_pote())>= ERROR_POTE) ? (f_leer_pote()) : (old_pote);
-    if (old_pote != new_pote){
-        m_cambia_vel(old_pote);
-    };
-    return new_pote;
-};
+}
