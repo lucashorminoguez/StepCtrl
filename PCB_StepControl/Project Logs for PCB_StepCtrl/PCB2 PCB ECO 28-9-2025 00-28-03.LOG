@@ -1,0 +1,13 @@
+Removed Pin From Net: NetName=NetBLUEPILL BOARD_25 Pin=Driver M1-1
+Removed Pin From Net: NetName=NetBLUEPILL BOARD_27 Pin=Driver M1-3
+Removed Pin From Net: NetName=NetBLUEPILL BOARD_28 Pin=Driver M2-1
+Removed Pin From Net: NetName=NetBLUEPILL BOARD_30 Pin=Driver M2-3
+Removed Pin From Net: NetName=NetBLUEPILL BOARD_34 Pin=Driver M3-1
+Removed Pin From Net: NetName=NetBLUEPILL BOARD_31 Pin=Driver M3-3
+Added Pin To Net: NetName=NetBLUEPILL BOARD_27 Pin=Driver M1-1
+Added Pin To Net: NetName=NetBLUEPILL BOARD_25 Pin=Driver M1-3
+Added Pin To Net: NetName=NetBLUEPILL BOARD_30 Pin=Driver M2-1
+Added Pin To Net: NetName=NetBLUEPILL BOARD_28 Pin=Driver M2-3
+Added Pin To Net: NetName=NetBLUEPILL BOARD_31 Pin=Driver M3-1
+Added Pin To Net: NetName=NetBLUEPILL BOARD_34 Pin=Driver M3-3
+Added Member To Class: ClassName=Placa_Main Member=Component Driver M2

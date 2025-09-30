@@ -1,0 +1,13 @@
+Added Component: Designator=U0(TO170P1016X470X2092-5)
+Add component (AddParameter): Name = "Check_prices"; Value = "https://www.snapeda.com/parts/LM2596T-ADJ/NOPB/Texas+Instruments/view-part/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "Texas Instruments"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "LM2596T-ADJ/NOPB"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "TO-220-5 Texas Instruments"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/LM2596T-ADJ/NOPB/Texas+Instruments/view-part/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetC1_P Pin=U0-1
+Added Pin To Net: NetName=NetD1_C Pin=U0-2
+Added Pin To Net: NetName=GND Pin=U0-3
+Added Pin To Net: NetName=NetC3_1 Pin=U0-4
+Added Pin To Net: NetName=GND Pin=U0-5
+Added Member To Class: ClassName=Placa_Main Member=Component U0 LM2596T-ADJ/NOPB

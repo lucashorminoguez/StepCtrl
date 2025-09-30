@@ -1,0 +1,16 @@
+Change Component Designator: OldDesignator=Relay 1 NewDesignator=Relay 2
+Change Component Designator: OldDesignator=Relay 2 NewDesignator=Relay 1
+Change Component Description : Designator=D1 Old Description=ON Semi 1N5820G, Schottky Diode, 20V 3A, 2-Pin DO-201AD New Description=ON Semi 1N5820G, Schottky Diode, 20V 3A, 2-Pin DO-201AD | ON Semiconductor 1N5820G
+Added Pin To Net: NetName=GND Pin=BLUEPILL BOARD-19
+Added Pin To Net: NetName=+3.3v Pin=BLUEPILL BOARD-20
+Added Pin To Net: NetName=GND Pin=BLUEPILL BOARD-39
+Change Net Name : Old Net Name=Net New Net Name=Net|D1D2D3D4|A|_3
+Change Net Name : Old Net Name=NetRelay 1_1 New Net Name=NetRelay 2_1
+Change Net Name : Old Net Name=NetRelay 1_2 New Net Name=NetRelay 2_2
+Change Net Name : Old Net Name=NetRelay 1_3 New Net Name=NetRelay 2_3
+Change Net Name : Old Net Name=NetRelay 1_5 New Net Name=NetRelay 2_5
+Change Net Name : Old Net Name=NetRelay 2_1 New Net Name=NetRelay 1_1
+Change Net Name : Old Net Name=NetRelay 2_2 New Net Name=NetRelay 1_2
+Change Net Name : Old Net Name=NetRelay 2_3 New Net Name=NetRelay 1_3
+Change Net Name : Old Net Name=NetRelay 2_5 New Net Name=NetRelay 1_5
+Added Member To Class: ClassName=Placa_Main Member=Component |D1D2D3D4|A| Header 16

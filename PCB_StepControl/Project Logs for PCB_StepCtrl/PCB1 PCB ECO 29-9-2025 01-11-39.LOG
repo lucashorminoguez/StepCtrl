@@ -1,0 +1,7 @@
+Change Component Description : Designator=D1 Old Description=ON Semi 1N5820G, Schottky Diode, 20V 3A, 2-Pin DO-201AD New Description=ON Semi 1N5820G, Schottky Diode, 20V 3A, 2-Pin DO-201AD | ON Semiconductor 1N5820G
+Added Pin To Net: NetName=NetBLUEPILL BOARD_38 Pin=C2-P
+Added Pin To Net: NetName=NetBLUEPILL BOARD_38 Pin=C3-2
+Added Pin To Net: NetName=NetBLUEPILL BOARD_38 Pin=L1-1
+Added Pin To Net: NetName=NetBLUEPILL BOARD_38 Pin=R9-2
+Added Pin To Net: NetName=NetBLUEPILL BOARD_38 Pin=R11-2
+Change Net Name : Old Net Name=NetBLUEPILL BOARD_38 New Net Name=+3.3v

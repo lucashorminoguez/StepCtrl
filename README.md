@@ -27,7 +27,9 @@ Todas las funciones pueden desahabilitarse poniendo valores en 0 segun se requie
 ![Image_Alt](https://github.com/lucashorminoguez/StepCtrl/blob/main/StepCtrl.diagramaDeEstados.png?raw=true)
 
 *Se dispone de una entrada analogica para variar la velociadad en tiempo real dentro de cualquier estado, exceptuando `CARGANDO_PARAM`, `ESPERANDO_PASO1` y `FINALIZANDO_CICLO` a efectos de no activar el motor en falso*
+
 ---
+
 ## HARDWARE:
 ### Microcontrolador:
 El utilizado es un STM32 STM32F103C8T6, para el cual se describira el circuito con la placa propuesta para el funcionamiento, pero la idea es que pueda llevarse a cabo en cualquier micro mediante el archivo "hal_ctrl.h" el cual tiene las declaraciones para las funciones que requiere el sistema, respetando este contrato se pueden generar los archivos correspondientes de implementaciones para el microcontrolador deseado.
@@ -43,7 +45,10 @@ De momento solo nos interesan los pines :
 - Pote para el cambio de velocidad
 
 En caso de implementar otras funcionalidades esta es la configuración de pines que se mantendra.
-En la carpeta "PCB_StepControl" se encuentra el avance con el circuito completo, pero por el momento se desestima, esta en fase de proceso. Probablemente reemplace el pc817 por algun opto de 4 canales y estoy en la disyuntiva entre usar un lm2596 para regular la entrada y alimentar al micro con 3.3v o entregar 5v y pasar por un regulador lineal como el ld1117 a los 3.3v para una señal mas limpia.
+### StepControl Board with Blue Pill :
+En la carpeta "PCB_StepControl" se encuentra el circuito completo para el manejo total de pines para ampliaciones futuras. Se pueden colocar unicamente los componentes necesarios para el minimo funcionamiento.
+
+![Image_Alt](https://github.com/lucashorminoguez/StepCtrl/blob/main/pcb_screenshot.png?raw=true)
 
 ---
 
