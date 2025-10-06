@@ -124,6 +124,7 @@ uint8_t h_getDigital(uint8_t index){
   if(index == 0 || index > BOTON4) return H_MICRO_ERROR;
   return (uint8_t)HAL_GPIO_ReadPin(signal_map[index-1].port,signal_map[index-1].pin);
 }
+
 uint32_t h_getMilis(){
 	return HAL_GetTick();
 }

@@ -1,7 +1,7 @@
+#include <stdint.h>
 #include "fsm_motors.h"
 #include "perifericos.h"
-#include "hal_micro.h"
-#include <stdint.h>
+
 int main(){
 	f_init_system();
     state_t estado_actual = CARGANDO_PARAM;
