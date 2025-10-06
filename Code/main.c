@@ -1,7 +1,9 @@
 #include "fsm_motors.h"
 #include "perifericos.h"
+#include "hal_micro.h"
 #include <stdint.h>
 int main(){
+	f_init_system();
     state_t estado_actual = CARGANDO_PARAM;
     motor_ctrl_t ctrl = f_get_ctrl_default();
     uint32_t actual_time = TIMEOUT_LIBERADO;

@@ -1,0 +1,12 @@
+../Core/Src/hal_stm32.c:48:10:m_stop	8	static
+../Core/Src/hal_stm32.c:53:10:freq_to_arr	0	static
+../Core/Src/hal_stm32.c:58:10:m_cambia_vel	24	static
+../Core/Src/hal_stm32.c:77:10:m_arranca	24	static
+../Core/Src/hal_stm32.c:93:10:m_termina	16	static
+../Core/Src/hal_stm32.c:106:10:m_set_direc	8	static
+../Core/Src/hal_stm32.c:115:10:h_getAnalog	8	static
+../Core/Src/hal_stm32.c:123:9:h_getDigital	0	static
+../Core/Src/hal_stm32.c:127:10:h_getMilis	0	static
+../Core/Src/hal_stm32.c:146:6:SystemClock_Config	72	static,ignoring_inline_asm
+../Core/Src/hal_stm32.c:131:5:h_micro_init	96	static,ignoring_inline_asm
+../Core/Src/hal_stm32.c:408:6:Error_Handler	0	static,ignoring_inline_asm

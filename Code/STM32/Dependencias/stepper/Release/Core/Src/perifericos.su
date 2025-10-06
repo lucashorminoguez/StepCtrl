@@ -1,0 +1,5 @@
+../Core/Src/perifericos.c:6:10:f_leer_pote	0	static
+../Core/Src/perifericos.c:10:10:f_pote_cambia_vel	16	static
+../Core/Src/perifericos.c:18:10:adc_to_rpm	0	static
+../Core/Src/perifericos.c:23:10:diferencia_16	0	static
+../Core/Src/perifericos.c:28:10:potencia_16	8	static
