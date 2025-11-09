@@ -24,7 +24,7 @@ Todas las funciones pueden desahabilitarse poniendo valores en 0 segun se requie
 ---
 
 ## Diagrama de estados :
-![Image_Alt](https://github.com/lucashorminoguez/StepCtrl/blob/main/StepCtrl.diagramaDeEstados.png?raw=true)
+![DIAGRAMA_DE_ESTADOS](https://github.com/lucashorminoguez/StepCtrl/blob/main/resources/StepCtrl.diagramaDeEstados.png?raw=true)
 
 *Se dispone de una entrada analogica para variar la velociadad en tiempo real dentro de cualquier estado, exceptuando `CARGANDO_PARAM`, `ESPERANDO_PASO1` y `FINALIZANDO_CICLO` a efectos de no activar el motor en falso*
 
@@ -37,7 +37,7 @@ El utilizado es un STM32 STM32F103C8T6, para el cual se describira el circuito c
 Cualquiera, este modulo carece de fuente y manejo de corriente para los motores, solo envia la secuencia de steps segun seteos y entradas.
 ### Circuitos:
 ### StepControl Blue Pill PinOut: 
-![Image_Alt](https://github.com/lucashorminoguez/StepCtrl/blob/main/StepCtrl.BluePillPinOut.png?raw=true)
+![PINOUT_BLUEPILL](https://github.com/lucashorminoguez/StepCtrl/blob/main/resources/StepCtrl.BluePillPinOut.png?raw=true)
 
 De momento solo nos interesan los pines : 
 - SignalIn para los Triggers
@@ -48,7 +48,7 @@ En caso de implementar otras funcionalidades esta es la configuración de pines 
 ### StepControl Board with Blue Pill :
 En la carpeta "PCB_StepControl" se encuentra el circuito completo para el manejo total de pines para ampliaciones futuras. Se pueden colocar unicamente los componentes necesarios para el minimo funcionamiento.
 
-![Image_Alt](https://github.com/lucashorminoguez/StepCtrl/blob/main/pcb_screenshot.png?raw=true)
+![PCB](https://github.com/lucashorminoguez/StepCtrl/blob/main/resources/pcb_screenshot.png?raw=true)
 
 ---
 
@@ -64,7 +64,7 @@ Dentro del archivo nos encontramos von varios `#define` a completar segun el mot
 
 > Internamente, la frecuencia de pulsos se calcula como:  
 > 
-> Frecuencia [Hz] = (CTRL_VEL/ 60) * (PASOS_POR_VUELTA * MICROSTEPPING)
+> Frecuencia [Hz] = (CTRL_VEL[RPM]/ 60) * (PASOS_POR_VUELTA * MICROSTEPPING)
 > 
 > Esto permite que el usuario trabaje en RPM, simplificando la configuración.
 
@@ -97,6 +97,7 @@ Son las señales de disparo de los distintos eventos, el modulo esta pensado par
 - `CTRL_STATE_TRIGGER3`           :Activo bajo/alto
 - `CTRL_STATE_TRIGGER_FINAL`      :Activo bajo/alto
 - `CTRL_STATE_HABILITACION_CICLO` :Activo bajo/alto
+---
 ### Modo:
 - `CTRL_MODO`            1       : Modo Secuencia o Modo ONE-SHOT
 - `CTRL_CANT_PASOS`      3       : Hasta 3 Pasos/Movimientos independientes en Modo Secuencia
@@ -107,4 +108,3 @@ Son las señales de disparo de los distintos eventos, el modulo esta pensado par
 - `CTRL_TIMEOUT_2`       10      : Timeout [Segundos] para el Trigger del paso 2
 - `CTRL_TIMEOUT_FINAL`   10      : Timeout [Segundos] para el Trigger del final
 ---
-##### *sujeto a cualquier cambio*
