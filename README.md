@@ -108,3 +108,5 @@ Son las señales de disparo de los distintos eventos, el modulo esta pensado par
 - `CTRL_TIMEOUT_2`       10      : Timeout [Segundos] para el Trigger del paso 2
 - `CTRL_TIMEOUT_FINAL`   10      : Timeout [Segundos] para el Trigger del final
 ---
+### Demo de Funcionamiento basico con STM32 BluePill :
+[![Demo_Funcionamiento_StepCtrl](https://img.youtube.com/vi/vPTgvgSmrYA/0.jpg)](https://www.youtube.com/watch?v=vPTgvgSmrYA)
