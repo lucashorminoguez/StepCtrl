@@ -1,5 +1,10 @@
-# StepCtrl 
-Sistema de manejo y control de motores paso a paso.
+# StepCtrl
+
+**Sistema de manejo y control de motores paso a paso.**
+<p align="center">
+  <img src="https://github.com/lucashorminoguez/StepCtrl/blob/main/resources/icono.png?raw=true" alt="ICONO" width="200">
+</p>
+
 ## Descripción:
 Este sistema permite el manejo secuencial de motores paso a paso o steppers cambiando valores según el proposito de la operación. 
 El codigo provee manejo de: 
@@ -52,7 +57,7 @@ En la carpeta "PCB_StepControl" se encuentra el circuito completo para el manejo
 
 ---
 
-## Cargar Valores usando el archivo CTRL.h :
+## ⚙️Cargar Valores usando el archivo CTRL.h :
 Dentro del archivo nos encontramos von varios `#define` a completar segun el motor y driver que estemos utilizando, asi como el resto de parametros para la operación deseada :
 
 ### Motor y driver
